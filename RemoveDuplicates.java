@@ -9,7 +9,42 @@ public static void main(String[] args)
   removeDuplicatesNum(454700);
    removeDuplicatesCNumArray(new int[]{4,5,4,7,0,0});
    removeDuplicatesNumArray(new int[]{4,5,4,7,0,0});
+   removeDuplicateFromStringWithC("abcfcacbsaa");
+    removeDuplicateFromStringWithOutC("abcfcacbsaa");
 }	
+
+static void removeDuplicateFromStringWithC(String input)
+{	
+  
+   Set<Character> set=new HashSet<>();
+   StringBuilder sb=new StringBuilder();
+   for(char ch:input.toCharArray())
+   {
+    if(set.add(ch))
+	{
+		sb.append(ch);
+	}
+   }	   
+   System.out.println("removeDuplicateFromStringWithC "+sb.toString());
+   
+	
+}
+
+static void removeDuplicateFromStringWithOutC(String input)
+{	
+   String result="";
+   for(char ch:input.toCharArray())
+   {
+    if(result.indexOf(ch)==-1)
+	{
+	  result=result+ch;	
+	}	
+   }
+    
+   System.out.println("removeDuplicateFromStringWithOutC "+result);
+   
+	
+}
 
 static void removeDuplicatesNumArray(int[] array)
 {	
