@@ -14,9 +14,24 @@ public static void main(String[] args)
 static void removeDuplicatesNumArray(int[] array)
 {	
   
+   boolean[] seen=new boolean[10]; //no matter the array length ,booloean array has to be 10 in size for all numbers to fit in
    
+   int i=0;
+   System.out.print("result from removeDuplicatesNum Array  ");
+   int arrayLen= array.length;
+   System.out.println(arrayLen);
+   while(i<arrayLen)
+   {
+	 if(!seen[array[i]])
+	 {
+       seen[array[i]]=true;
+       System.out.print(array[i]+" ");	   
+	 }
+
+     i++;	 
+   }   
   
-   System.out.println("result from removeDuplicatesNum Array using Collection: "+set);
+   System.out.println();
    
 	
 }
@@ -35,18 +50,6 @@ static void removeDuplicatesCNumArray(int[] array)
 }
 
 
-static void removeDuplicatesCNumArray(int[] array)
-{
-  Set<Integer> set = new HashSet<>();
-  for(int arr:array)
-  {
-    set.add(arr);
-  }	  
-   
-   System.out.println("result from removeDuplicatesNum Array: "+set);
-   
-	
-}	
 	
 static void removeDuplicatesNum(int input)
 {
